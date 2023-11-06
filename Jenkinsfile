@@ -6,6 +6,7 @@ def component_group =""
 
 pipeline {
 
+    agent any
    
     environment {
 
