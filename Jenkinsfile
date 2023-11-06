@@ -49,10 +49,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                    sh 'whoami'
-                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash'
-                    sh '. ~/.nvm/nvm.sh'
-                    sh 'nvm install --lts'
+
                     sh 'node --version'
                     sh 'npm --version'
                     sh "npm cache clean --force"
