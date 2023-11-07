@@ -49,6 +49,8 @@ pipeline {
         stage('Instalar dependencias de Node.js') {
             steps {
                 script {
+                    sh 'npm config get fetch-retry-maxtimeout'
+
                     sh 'npm config get registry'
                     sh 'npm config set registry http://54.226.116.92:8081/repository/npm-group/'
                     sh 'npm config get registry'
