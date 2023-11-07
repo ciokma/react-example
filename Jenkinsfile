@@ -46,7 +46,13 @@ pipeline {
 
             }
         }
-       
+        stage('Instalar dependencias de Node.js') {
+            steps {
+                script {
+                    sh 'npm install --registry=http://54.226.116.92:8081/registry/npm-group/'
+                }
+            }
+        }
         stage('Build') {
             steps {
 
