@@ -49,7 +49,9 @@ pipeline {
         stage('Instalar dependencias de Node.js') {
             steps {
                 script {
-                    sh 'npm install --registry=http://54.226.116.92:8081/registry/npm-group/'
+                    sh 'npm config get registry'
+                    sh 'npm config set registry http://54.226.116.92:8081/repository/npm-group/'
+                    sh 'npm config get registry'
                 }
             }
         }
@@ -58,7 +60,6 @@ pipeline {
 
                     sh 'node --version'
                     sh 'npm --version'
-                    sh "npm cache clean --force"
                     sh 'npm install' // Instala las dependencias
                     sh 'npm run build' // Compila el código React
 
